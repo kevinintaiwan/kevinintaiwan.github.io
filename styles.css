@@ -318,26 +318,6 @@ body {
     padding-bottom: 0;
 }
 
-.award-image1 {
-    margin-left: 800px;
-    margin-top: -150px;
-}
-
-.award-image1 img {
-    max-width: 100%;
-    height: auto;
-}
-
-.award-image2 {
-    margin-left: 800px;
-    margin-top: -150px;
-}
-
-.award-image2 img {
-    max-width: 100%;
-    height: auto;
-}
-
 .award-year h4 {
     color: #0066cc;
     font-size: 1.2rem;
@@ -346,20 +326,53 @@ body {
     text-align: left;
 }
 
+/* 新增的獎項內容布局 */
+.award-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.award-info {
+    flex: 1;
+    min-width: 250px;
+}
+
+.award-image {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.award-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+/* 移除舊的固定位置圖片樣式 */
+.award-image1, .award-image2 {
+    display: none;
+}
+
 .award-title {
     font-weight: 500;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     text-align: left;
+    color: #1d1d1f;
+    font-size: 1.1rem;
 }
 
 .award-teacher, .award-students {
-    margin-bottom: 5px;
-    padding-left: 10px;
-    text-align: left;
+    margin-bottom: 7px;
+    color: #515154;
 }
 
-.award-students {
-    margin-bottom: 0;
+.desktop-only {
+    display: inline;
 }
 
 /* 聯絡我們區塊 */
@@ -439,50 +452,6 @@ body {
     margin: 0;
 }
 
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.contact-form input,
-.contact-form textarea {
-    padding: 16px;
-    border: 1px solid #d2d2d7;
-    border-radius: 12px;
-    font-size: 1rem;
-    transition: border-color 0.3s, box-shadow 0.3s;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none;
-    border-color: #0066cc;
-    box-shadow: 0 0 0 3px rgba(0,102,204,0.2);
-}
-
-.contact-form textarea {
-    height: 150px;
-    resize: vertical;
-}
-
-.contact-form button {
-    padding: 16px 30px;
-    background: #0066cc;
-    color: white;
-    border: none;
-    border-radius: 12px;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-}
-
-.contact-form button:hover {
-    background: #004499;
-    transform: translateY(-2px);
-}
-
 /* 頁尾樣式 */
 footer {
     background: #1d1d1f;
@@ -497,34 +466,6 @@ footer {
     opacity: 0.7;
 }
 
-/* 響應式設計 */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-
-    .hamburger {
-        display: block;
-    }
-
-    .about-content,
-    .contact-content {
-        grid-template-columns: 1fr;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .members-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .research-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
 /* 標題樣式 */
 h2 {
     text-align: center;
@@ -533,4 +474,164 @@ h2 {
     font-size: 2.5rem;
     font-weight: 700;
     letter-spacing: -0.02em;
-} 
+}
+
+/* 響應式設計 */
+@media (max-width: 992px) {
+    .award-content {
+        flex-direction: column;
+    }
+    
+    .award-image {
+        justify-content: center;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* 導航欄響應式 */
+    .nav-links {
+        position: fixed;
+        top: 64px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        padding: 20px 0;
+        display: none;
+        align-items: center;
+        z-index: 999;
+        gap: 0;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-links a {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+    
+    .hamburger {
+        display: block;
+    }
+    
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+    
+    /* 內容區域響應式 */
+    .members-grid,
+    .research-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+    }
+    
+    section {
+        padding: 80px 0;
+    }
+    
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+    
+    .desktop-only {
+        display: none;
+    }
+    
+    .email-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .email-label {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar .container {
+        height: 56px;
+    }
+    
+    .nav-links {
+        top: 56px;
+    }
+    
+    .logo {
+        font-size: 1rem;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    section {
+        padding: 60px 0;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    
+    .member-category,
+    .research-item,
+    .project-item,
+    .achievement-item {
+        padding: 25px;
+    }
+    
+    .contact-info {
+        gap: 20px;
+    }
+    
+    .info-item {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .email-item {
+        align-items: center;
+    }
+    
+    .email-container {
+        align-items: center;
+    }
+    
+    .email-label {
+        justify-content: center;
+        margin-left: 0;
+        width: 100%;
+    }
+}
