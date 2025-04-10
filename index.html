@@ -11,7 +11,7 @@
     <nav class="navbar">
         <div class="container">
             <div class="logo">智慧藥學產業發展中心</div>
-            <div class="nav-links">
+            <div class="nav-links" id="navLinks">
                 <a href="#home">首頁</a>
                 <a href="#about">關於我們</a>
                 <a href="#members">成員</a>
@@ -20,7 +20,7 @@
                 <a href="#achievements">競賽成果</a>
                 <a href="#contact">聯絡我們</a>
             </div>
-            <div class="hamburger">
+            <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -160,29 +160,41 @@
                     <div class="award-details">
                         <div class="award-year">
                             <h4>2024年金獎:</h4>
-                            <p class="award-title"> 用藥指導AI機器人系統開發案</p>
-                            <p class="award-teacher">指導老師: 李建立</p>
-                            <p class="award-students">參賽學生: 簡劭安、曾誼婕</p>
-                        <div class="award-image1">
-                            <img src="2024gold.png" alt="2024年金獎">
-                        </div>
+                            <div class="award-content">
+                                <div class="award-info">
+                                    <p class="award-title">用藥指導AI機器人系統開發案</p>
+                                    <p class="award-teacher">指導老師: 李建立</p>
+                                    <p class="award-students">參賽學生: 簡劭安、曾誼婕</p>
+                                </div>
+                                <div class="award-image">
+                                    <img src="2024gold.png" alt="2024年金獎">
+                                </div>
+                            </div>
                         </div>
                         
                         <div class="award-year">
                             <h4>2024年銀獎:</h4>
-                            <p class="award-title"> 基於LINE社群平台建置非何杰金氏淋巴瘤<br>CHOP療法副作用衛教與照護模型</p>
-                            <p class="award-teacher">指導老師: 林佩怡</p>
-                            <p class="award-students">參賽學生: 曾子維、陳恩慈</p>
-                        <div class="award-image2">
-                            <img src="2024silver.png" alt="2024年銀獎">
-                        </div>
+                            <div class="award-content">
+                                <div class="award-info">
+                                    <p class="award-title">基於LINE社群平台建置非何杰金氏淋巴瘤<br class="desktop-only">CHOP療法副作用衛教與照護模型</p>
+                                    <p class="award-teacher">指導老師: 林佩怡</p>
+                                    <p class="award-students">參賽學生: 曾子維、陳恩慈</p>
+                                </div>
+                                <div class="award-image">
+                                    <img src="2024silver.png" alt="2024年銀獎">
+                                </div>
+                            </div>
                         </div>
                         
                         <div class="award-year">
                             <h4>2023年金獎:</h4>
-                            <p class="award-title"> 以深度學習訓練語音機器人建置用藥指導系統以「癌症病患首次用藥衛教」作為原型版</p>
-                            <p class="award-teacher">指導老師: 李建立</p>
-                            <p class="award-students">參賽學生: 吳安琪、林子琳</p>
+                            <div class="award-content">
+                                <div class="award-info">
+                                    <p class="award-title">以深度學習訓練語音機器人建置用藥指導系統以「癌症病患首次用藥衛教」作為原型版</p>
+                                    <p class="award-teacher">指導老師: 李建立</p>
+                                    <p class="award-students">參賽學生: 吳安琪、林子琳</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -221,11 +233,4 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 智慧藥學產業發展中心. All rights reserved.</p>
-            <p class="made-by">Made By Tzu Wei Tseng</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html> 
+            <p>© 2024 智慧藥學產業發展中心. All rights reserved.<br>Made By Tzu Wei Tseng
